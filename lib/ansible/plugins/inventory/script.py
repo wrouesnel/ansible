@@ -92,6 +92,8 @@ class InventoryModule(BaseInventoryPlugin):
                 (stdout, stderr) = sp.communicate()
 
                 path = to_native(path)
+                
+                err = None
                 if stderr:
                     err = to_native(stderr) + "\n"
 
