@@ -542,9 +542,7 @@ def main():
         if checksum != destination_checksum:
             os.remove(dest)
             module.fail_json(msg="The checksum for %s did not match %s; it was %s." % (dest, checksum, destination_checksum))
-
-    os.remove(tmpsrc)
-
+            
     # allow file attribute changes
     module.params['path'] = dest
     file_args = module.load_file_common_arguments(module.params)
